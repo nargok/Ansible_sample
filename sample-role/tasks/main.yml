@@ -16,3 +16,10 @@ __packages:
     owner: root
     group: root
     mode: 0644
+- name: ファイルの配信
+  copy:
+    src: index.html
+    dest: /usr/share/nginx/html/index.html
+    owner: root
+    group: root
+    mode: 0777
