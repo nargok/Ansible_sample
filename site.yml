@@ -1,0 +1,8 @@
+- name: ApacheのインストールをするPlaybook
+  hosts: all
+  become: yes
+  tasks:
+    - name: Apacheをインストールする
+      yum:
+        name: httpd
+        state: latest
