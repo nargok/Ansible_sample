@@ -1,2 +1,6 @@
 ---
 # tasks file for sample-role
+- name: パッケージのインストール、アップデート
+  yum:
+    name: httpd
+    state: latest
