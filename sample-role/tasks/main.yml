@@ -1,21 +1,31 @@
 ---
 # tasks file for sample-role
+- name: Install EPEL release for nginx
+  yum:
+   name: epel-release
+   state: present
+
 - name: パッケージのインストール、アップデート
   yum:
-    name: "{{ item }}"
+    name: "{{ __packages }}"
     state: latest
-  with_items: "{{ __packeges }}"
-__packages:
-  - httpd
-  - java
-  - rsync
+  tags:
+    - packages
+
+- name: Create user
+  user:
+    name: "webapp"
+    comment: "Used to deploy webapp"
+    state: present
+
 - name: .bashrcを配信
   template:
     src: .bashrc.j2
-    dest: "/home/hoge/.bashrc"
+    dest: "/home/webapp/.bashrc"
     owner: root
     group: root
     mode: 0644
+
 - name: ファイルの配信
   copy:
     src: index.html

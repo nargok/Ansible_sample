@@ -1,2 +1,7 @@
 ---
 # vars file for sample-role
+__packages:
+  - httpd
+  - java
+  - rsync
+  - nginx
