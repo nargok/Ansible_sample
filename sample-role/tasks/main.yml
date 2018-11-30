@@ -2,5 +2,10 @@
 # tasks file for sample-role
 - name: パッケージのインストール、アップデート
   yum:
-    name: httpd
+    name: "{{ item }}"
     state: latest
+  with_items: "{{ __packeges }}"
+__packages:
+  - httpd
+  - java
+  - rsync

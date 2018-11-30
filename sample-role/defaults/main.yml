@@ -1,2 +1,4 @@
 ---
 # defaults file for sample-role
+__packages:
+  - httpd
