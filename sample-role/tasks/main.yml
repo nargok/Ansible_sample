@@ -9,3 +9,10 @@ __packages:
   - httpd
   - java
   - rsync
+- name: .bashrcを配信
+  template:
+    src: .bashrc.j2
+    dest: "/home/hoge/.bashrc"
+    owner: root
+    group: root
+    mode: 0644

@@ -3,3 +3,4 @@
 
 [all:vars]
 ansible_ssh_user=vagrant
+java_home=/usr/lib/jvm/java-1.8.0-openjdk.x86_64
