@@ -1,0 +1,5 @@
+- name: sample-roleを使うPlaybook
+  hosts: all
+  become: yes
+  roles:
+    - sample-role
